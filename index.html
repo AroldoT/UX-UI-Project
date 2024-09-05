@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Gerenciamento de Mesas</title>
+    <link rel="stylesheet" href="./CSS/styles.css">
+</head>
+<body>
+    <h1>Gerenciamento de Mesas</h1>
+    <div id="app">
+        <aside id="lista-mesas"></aside>
+        <div id="detalhes-mesa"></div>
+        <div class="botoes">
+            <button class="abrir-menu" id="btn-cardapio"><img src="assets/cardapio.png" alt="Cardápio"></button>
+            <button class="encerrar-mesa" id="btn-finalizar-mesa" alt="Finalizar mesa"><img class="copo" src="assets/copo.png" alt=""><img class="agua" src="assets/baixo.png" alt=""></button>
+            <button class="unir-mesas" id="btn-unir-mesas" alt="Unir mesas">⑃</button>
+        </div>
+    </div>
+    <div>
+    <h2>Dashboard</h2>
+    <div id="filtros">
+        <input type="date" id="filtro-data">
+        <select id="filtro-item">
+            <option value="">Todos os itens</option>
+        </select>
+        <select id="filtro-mesa">
+            <option value="">Todas as mesas</option>
+        </select>
+        <select id="filtro-pagamento">
+            <option value="">Todas as formas de pagamento</option>
+            <option value="Dinheiro">Dinheiro</option>
+            <option value="Cartão de Crédito">Cartão de Crédito</option>
+            <option value="Cartão de Débito">Cartão de Débito</option>
+            <option value="PIX">PIX</option>
+        </select>
+        <button id="aplicar-filtros">Aplicar Filtros</button>
+    </div>
+    <div id="resumo-vendas"></div>
+    <div id="itens-mais-vendidos"></div>
+    <div id="vendas-por-mesa"></div>
+    <div id="vendas-por-pagamento"></div>
+</div>
+    <div id="modal-cardapio" class="modal">
+        <div class="modal-content">
+            <span class="fechar">&times;</span>
+            <h2>Cardápio</h2>
+            <div id="lista-cardapio"></div>
+        </div>
+    </div>
+
+    <div id="modal-unir-mesas" class="modal">
+        <div class="modal-content">
+            <span class="fechar">&times;</span>
+            <h2>Unir Mesas</h2>
+            <div id="lista-mesas-unir"></div>
+            <button id="btn-confirmar-uniao">Confirmar União</button>
+        </div>
+    </div>
+
+    <div id="modal-pagamento" class="modal">
+        <div class="modal-content">
+            <span class="fechar">&times;</span>
+            <h2>Finalizar Pagamento</h2>
+            <p>Total: R$ <span id="total-mesa"></span></p>
+            <label><input type="checkbox" id="cover-artistico"> Cover Artístico (R$ 10,00)</label>
+            <label><input type="checkbox" id="taxa-servico"> Taxa de Serviço (10%)</label>
+            <h3>Forma de Pagamento:</h3>
+            <label><input type="radio" name="forma-pagamento" value="Dinheiro"> Dinheiro</label>
+            <label><input type="radio" name="forma-pagamento" value="Cartão de Crédito"> Cartão de Crédito</label>
+            <label><input type="radio" name="forma-pagamento" value="Cartão de Débito"> Cartão de Débito</label>
+            <label><input type="radio" name="forma-pagamento" value="PIX"> PIX</label>
+            <button id="btn-pagamento-parcial">Pagamento Parcial</button>
+            <button id="btn-realizar-pagamento">Realizar Pagamento</button>
+        </div>
+    </div>
+
+    <script src="./JavaScript/data.js"></script>
+    <script src="./JavaScript/ui.js"></script>
+    <script src="./JavaScript/mesas.js"></script>
+    <script src="./JavaScript/pagamento.js"></script>
+    <script src="./JavaScript/relatorio.js"></script>
+    <script src="./JavaScript/app.js"></script>
+    <script src="./JavaScript/dashboard.js"></script>
+</body>
+</html>

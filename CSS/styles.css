@@ -1,0 +1,216 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background: radial-gradient(circle, rgba(2,0,9,1) 44%, rgba(1,9,52,1) 100%);
+  color: #777777;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#app {
+  max-width: 800px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 1fr 90px;
+  gap: 0 16%;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  grid-column-start: 1;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+#detalhes-mesa{
+  grid-column-start: 2;
+  grid-row-start: 1;
+}
+
+.mesa-btn {
+  margin: 5px;
+  padding: 5px 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  border: 1px solid #00ff2a;
+  font-weight: 600;
+  color: #00ff2a;
+  cursor: pointer;
+  transition: all 0.28s ease-in-out;
+}
+.mesa-btn:hover {
+  transform: scale(1.07);
+  box-shadow: 2px 2px 10px #454444e3;
+}
+
+.ocupada {
+  border: 1px solid red;
+  color: rgb(255, 0, 0);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.fechar {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.fechar:hover,
+.fechar:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button {
+  margin: 5px;
+  padding: 5px 10px;
+}
+
+.botoes {
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 1fr;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  grid-column-start: 2;
+  grid-row-start: 2;
+}
+
+.add-itens{
+  color: green;
+  background-color: transparent;
+  border: none;
+  font-size: xxx-large;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.add-itens:hover{
+  text-shadow: 0 0 6px #454444e3;
+  transform: scale(1.15);
+}
+
+.abrir-menu{
+  grid-column-start: 1;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  width: 40px;
+  border: none;
+  overflow: hidden;
+  height: 45px;
+}
+.abrir-menu img {
+  width: 60px;
+}
+.abrir-menu:hover{
+  transform: scaleX(1.05);
+  /* border-right: 1px solid white; */
+  width: 70px;
+}
+
+.encerrar-mesa{
+  grid-column-start: 2;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.encerrar-mesa:hover{
+  text-shadow: 0 0 6px #454444e3;
+  transform: scale(1.15);
+}
+.copo{
+  position: absolute;
+  width: 28px;
+  z-index: 1;
+  transform: scaleX(1.03);
+}
+.agua{
+  position: relative;
+  width: 18px;
+  transition: all 0.5s ease-in-out;
+}
+.encerrar-mesa:hover .agua{
+  transform: translateY(-5px) translateX(-0.5px) scaleX(1.17) scaleY(1.8);
+}
+
+.unir-mesas{
+  grid-column-start: 3;
+  background-color: transparent;
+  border: none;
+  font-size: xxx-large;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  color: yellow;
+}
+.unir-mesas:hover{
+  text-shadow: 0 0 6px #454444e3;
+  transform: scale(1.15);
+}
+
+
+/* Dashboard */
+#dashboard {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding-left: 20px;
+}
+
+#filtros, #resumo-vendas, #itens-mais-vendidos, #vendas-por-mesa, #vendas-por-pagamento {
+  margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  #app {
+    flex-direction: column;
+  }
+
+  #lista-mesas {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .main-content {
+    padding: 0;
+  }
+
+  #dashboard {
+    padding-left: 0;
+  }
+}
